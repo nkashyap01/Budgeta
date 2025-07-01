@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <div className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b">
       <nav className="container mx-auto px-4 py-1 flex items-center justify-between">
-        <Link href="/">
+        <Link href="/" prefetch={false}>
    <div className="h-[60px] overflow-hidden flex items-center">
   <Image
     src="/logo.png"
@@ -25,7 +25,7 @@ const Header = () => {
     <div> 
 
      <SignedIn>
-      <Link href={"/dashboard"}>
+      <Link href={"/dashboard"} prefetch={false}>
 <Button variant="outline">
 <LayoutDashboard size={18}/>
 <span>Dashboard</span>
@@ -34,13 +34,16 @@ const Header = () => {
 
       </Link>
      </SignedIn>
-       <SignedOut>
 
-            <SignInButton forceRedirectUrl='/dashboard'>
+       <SignedOut>
+            {/* <SignInButton forceRedirectUrl='/dashboard'>
               <Button variant="outline">Login</Button>
-            </SignInButton>
-             
+            </SignInButton> */}
+                  <Link href="/sign-in" >
+                   <Button variant="outline">Login</Button>
+                </Link>   
             </SignedOut>
+
             <SignedIn>
               <UserButton />
             </SignedIn>

@@ -1,9 +1,10 @@
 import React from 'react'
+import { defaultDateLib } from 'react-day-picker'
 
 const Page = () => {
   return (
     <div>
-      <p className="bg-amber-500 text-black">Neha</p>
+      <p>Nehaa</p>
     </div>
   )
 }
