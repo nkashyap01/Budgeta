@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+
 import {
   Drawer,
   DrawerClose,
@@ -21,10 +22,12 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Switch } from "@/components/ui/switch";
+import { createAccount } from "@/actions/dashboard";
 import { accountSchema } from "@/app/lib/schema";
 import { Button } from "./ui/button";
 import { toast } from "sonner";
 import useFetch from "@/hooks/use-fetch";
+import { Loader2 } from "lucide-react";
 
 
 export function CreateAccountDrawer({ children }) {
@@ -70,7 +73,7 @@ export function CreateAccountDrawer({ children }) {
   }, [error]);
 
    const onSubmit = async (data) => {
-    console.log(data);
+      createAccountFn(data);
   };
 
 
